@@ -1,0 +1,37 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask App - Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Process Results</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Process ID</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+                <th>Execution Time</th>
+                <th>Waiting Time</th>
+                <th>Turnaround Time</th>
+                <!-- Add additional headers here if needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    {% for rows in result %}
+                        <td>{{ rows }}</td>
+                    {% endfor %}
+                    <!-- Add additional cells here if needed -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+

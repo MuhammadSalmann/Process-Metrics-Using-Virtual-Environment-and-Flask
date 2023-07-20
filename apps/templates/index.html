@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask App</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1><marquee> <i> <u>Welcome to our Flask App</u> </i> </marquee></h1>
+    <p><b>This app demonstrates the advantages of using a virtual environment.</b></p>
+    <ul> 
+    <li>It also showcases the use of process metrics to analyze and measure the performance of running processes. 
+    <li> We will analyse the process metrics sequentially as well as with threads 
+    </ul>
+    <h2>Run Processes</h2>
+    <form method="POST" action="{{ url_for('process') }}">
+      <label for="num_processes">Number of processes to run:</label>
+      <input type="number" name="num_processes" id="num_processes" min="1" required>
+      <button type="submit">Run Processes</button>
+    </form>
+  </body>
+</html>
